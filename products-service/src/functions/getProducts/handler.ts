@@ -3,7 +3,7 @@ import { middyfy } from "@libs/lambda";
 import { mockData } from "../../../mockProducts";
 import cors from "@middy/http-cors";
 
-export const handler = async (event) => {
+export const handler = async () => {
   return formatJSONResponse({
     products: mockData,
   });

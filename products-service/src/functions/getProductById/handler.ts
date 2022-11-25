@@ -4,10 +4,11 @@ import { mockData } from "../../../mockProducts";
 import cors from "@middy/http-cors";
 
 export const handler = async (event) => {
-  if (!event.queryStringParameters.id)
+  const report = mockData.find((i) => i.id === event.queryStringParameters.id);
+  if (!report)
     return {
       statusCode: 404,
-      body: JSON.stringify({ message: "Missing parameter id" }),
+      body: JSON.stringify({ message: "No data" }),
     };
   return formatJSONResponse(
     mockData.find((i) => i.id === event.queryStringParameters.id)
