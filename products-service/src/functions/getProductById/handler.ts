@@ -1,13 +1,17 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
 import { formatJSONResponse } from "@libs/api-gateway";
 import { middyfy } from "@libs/lambda";
 import { mockData } from "../../../mockProducts";
-import schema from "./schema";
+import cors from "@middy/http-cors";
 
-type HandlerType = ValidatedEventAPIGatewayProxyEvent<typeof schema>;
-
-export const handler: HandlerType = async (event) => {
-  return formatJSONResponse(mockData.at(0));
+export const handler = async (event) => {
+  if (!event.queryStringParameters.id)
+    return {
+      statusCode: 404,
+      body: JSON.stringify({ message: "Missing parameter id" }),
+    };
+  return formatJSONResponse(
+    mockData.find((i) => i.id === event.queryStringParameters.id)
+  );
 };
 
-export const getProductById = middyfy(handler);
+export const getProductById = middyfy(handler).use(cors());

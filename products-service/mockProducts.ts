@@ -3,7 +3,7 @@ export const mockData = [
     count: 4,
     description: "Short Product Description1",
     id: "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
-    price: 2.4,
+    price: 111111.11,
     title: "ProductOne",
   },
   {
@@ -52,6 +52,13 @@ export const mockData = [
     count: 3,
     description: "Short Product Description7",
     id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
+    price: 15,
+    title: "ProductName",
+  },
+  {
+    count: 3,
+    description: "Short Product Description7",
+    id: "4",
     price: 15,
     title: "ProductName",
   },
