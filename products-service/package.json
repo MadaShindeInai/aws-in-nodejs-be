@@ -12,7 +12,8 @@
   "dependencies": {
     "@middy/core": "^3.4.0",
     "@middy/http-cors": "^4.0.0",
-    "@middy/http-json-body-parser": "^3.4.0"
+    "@middy/http-json-body-parser": "^3.4.0",
+    "serverless-auto-swagger": "^2.11.0"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",

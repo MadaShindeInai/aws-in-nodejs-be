@@ -9,9 +9,16 @@ export default {
         method: "post",
         path: "product",
         cors: true,
+        bodyType: "AddProductBody",
         request: {
           schemas: {
             "application/json": schema,
+          },
+        },
+        responses: {
+          200: {
+            description: "Succesful response",
+            bodyType: "Product",
           },
         },
       },
