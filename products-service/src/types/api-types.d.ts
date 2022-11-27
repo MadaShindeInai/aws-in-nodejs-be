@@ -6,10 +6,10 @@ export interface Product {
   title: string;
 }
 export type AddProductBody = {
-  count: Product["count"];
-  description: Product["description"];
-  price: Product["price"];
-  title: Product["title"];
+  count: number;
+  description: string;
+  price: number;
+  title: string;
 };
 
 export type Products = Product[];

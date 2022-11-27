@@ -16,5 +16,6 @@ test("test addProduct", async () => {
     undefined
   )) as APIGatewayProxyResult;
   const product = JSON.parse(res.body) as Product;
+  expect(res.statusCode).toEqual(201);
   expect(product.id).toBe("test");
 });

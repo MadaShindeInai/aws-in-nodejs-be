@@ -11,9 +11,9 @@ export const handler = async (event: Partial<APIGatewayEvent>) => {
       statusCode: 404,
       body: JSON.stringify({ message: "No data" }),
     };
-  return formatJSONResponse(
-    mockData.find((i) => i.id === event.queryStringParameters.id)
-  );
+  return formatJSONResponse({
+    res: mockData.find((i) => i.id === event.queryStringParameters.id),
+  });
 };
 
 export const getProductById = middyfy(handler).use(cors());

@@ -5,7 +5,9 @@ import cors from "@middy/http-cors";
 
 export const handler = async () => {
   return formatJSONResponse({
-    products: mockData,
+    res: {
+      products: mockData,
+    },
   });
 };
 
